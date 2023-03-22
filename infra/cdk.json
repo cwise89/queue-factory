@@ -1,0 +1,38 @@
+{
+  "app": "npx ts-node --prefer-ts-exts bin/app.ts",
+  "context": {
+    "@aws-cdk/core:bootstrapQualifier": "hsteof61gw",
+    "appId": "fs-queues",
+    "cfxDeployRoleStackId": "extend-cfx-deploy-role-stack",
+    "tags": {
+      "project": "bria-sms",
+      "component": "bria"
+    },
+    "blueGreenConfig": {
+      "enabled": false,
+      "deploymentStrategy": "LINEAR_10PERCENT_EVERY_2MINUTES",
+      "cloudWatchNameSpace": "FS_LAMBDA",
+      "cloudWatchMetricName": "CAUGHT_ROLLBACK_ERRORS",
+      "cloudWatchDimensionName": "FUNCTION_NAME"
+    },
+    "lambdaConfig": {
+      "lambdaRepoName": "bria/sms",
+      "lambdaImageTag": "75169fb202"
+    },
+    "datadogConfig": {
+      "environment": "prod",
+      "version": "1.0.0",
+      "service": "bria",
+      "secretArn": "arn:aws:secretsmanager:us-west-2:199784824137:secret:DdApiKeySecret-gPqLS5gD8duy-LYx4No",
+      "site": "datadoghq.com",
+      "lambdaHandler": "index.handler"
+    },
+    "featureFlagConfig": {
+      "applicationName": "Bria",
+      "environmentName": "prod",
+      "configProfileName": "bria-sms",
+      "deployStrategyName": "bria-sms"
+    },
+    "legacyApiRoleArn": "arn:aws:iam::664749300448:role/legacy-api"
+  }
+}

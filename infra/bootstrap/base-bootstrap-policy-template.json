@@ -1,0 +1,63 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "sts:AssumeRole",
+        "sts:TagSession"
+      ],
+      "Resource": [
+        "arn:aws:iam::PLACEHOLDER_ACCOUNT_ID:role/cdk-PLACEHOLDER_BOOTSTRAP_QUALIFIER*",
+        "arn:aws:iam::PLACEHOLDER_ACCOUNT_ID:role/PLACEHOLDER_STACK_ID*"
+      ],
+      "Effect": "Allow",
+      "Sid": "AllowAssumeCfExecRole"
+    },
+    {
+      "Action": "ssm:*",
+      "Resource": "arn:aws:ssm:us-west-2:PLACEHOLDER_ACCOUNT_ID:parameter/cdk-bootstrap/PLACEHOLDER_BOOTSTRAP_QUALIFIER/version",
+      "Effect": "Allow",
+      "Sid": "AllowSsmBootstrapVersionCheck"
+    },
+    {
+      "Action": [
+        "iam:CreatePolicy",
+        "iam:CreatePolicyVersion",
+        "iam:DeletePolicyVersion",
+        "iam:ListPolicyVersions",
+        "iam:GetPolicy",
+        "iam:DeletePolicy"
+      ],
+      "Resource": "arn:aws:iam::PLACEHOLDER_ACCOUNT_ID:policy/PLACEHOLDER_STACK_ID*",
+      "Effect": "Allow",
+      "Sid": "PermissionsNeededForPolicyManagement"
+    },
+    {
+      "Action": [
+        "iam:GetRole",
+        "iam:CreateRole",
+        "iam:GetRolePolicy",
+        "iam:AttachRolePolicy",
+        "iam:DeleteRolePolicy",
+        "iam:DeleteRole",
+        "iam:DetachRolePolicy",
+        "iam:UntagRole",
+        "iam:PutRolePolicy",
+        "iam:TagRole",
+        "iam:ListRoleTags"
+      ],
+      "Resource": [
+      "arn:aws:iam::PLACEHOLDER_ACCOUNT_ID:role/PLACEHOLDER_STACK_ID*",
+      "arn:aws:iam::PLACEHOLDER_ACCOUNT_ID:role/cdk-PLACEHOLDER_BOOTSTRAP_QUALIFIER*"
+      ],
+      "Effect": "Allow",
+      "Sid": "PermissionsNeededForRoleManagement"
+    },
+    {
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::PLACEHOLDER_ACCOUNT_ID:role/cdk-PLACEHOLDER_BOOTSTRAP_QUALIFIER*",
+      "Effect": "Allow",
+      "Sid": "PermissionsNeededForPassRole"
+    }
+  ]
+}

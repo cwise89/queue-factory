@@ -1,0 +1,24 @@
+{
+  "name": "node-lambda-image-template",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "rm -rf ./build && npx -p typescript tsc",
+    "watch": "tsc -w"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.72",
+    "@types/node": "^14.17.21",
+    "@types/source-map-support": "^0.5.6",
+    "aws-sdk": "^2.842.0",
+    "prettier": "^2.7.1",
+    "ts-node": "^9.0.0",
+    "typescript": "~3.9.7"
+  },
+  "dependencies": {
+    "axios": "^1.1.3",
+    "datadog-lambda-js": "^6.86.0",
+    "dd-trace": "^3.13.2",
+    "source-map-support": "^0.5.16",
+    "winston": "^3.8.2"
+  }
+}
