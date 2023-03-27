@@ -71,6 +71,8 @@ export const cloudWatchPut = async (
 		})
 		.promise();
 
+		// some commit value
+
 	if (putMetric.$response.error) {
 		logger.error(
 			`Error putting CloudWatch error message ${putMetric.$response.error}`
