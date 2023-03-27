@@ -1,0 +1,60 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": ["sts:AssumeRole", "sts:TagSession"],
+      "Resource": [
+        "arn:aws:iam::271371352105:role/cdk-hsteof61gw*",
+        "arn:aws:iam::271371352105:role/fs-queues*"
+      ],
+      "Effect": "Allow",
+      "Sid": "AllowAssumeCfExecRole"
+    },
+    {
+      "Action": "ssm:*",
+      "Resource": "arn:aws:ssm:us-west-2:271371352105:parameter/cdk-bootstrap/hsteof61gw/version",
+      "Effect": "Allow",
+      "Sid": "AllowSsmBootstrapVersionCheck"
+    },
+    {
+      "Action": [
+        "iam:CreatePolicy",
+        "iam:CreatePolicyVersion",
+        "iam:DeletePolicyVersion",
+        "iam:ListPolicyVersions",
+        "iam:GetPolicy",
+        "iam:DeletePolicy"
+      ],
+      "Resource": "arn:aws:iam::271371352105:policy/fs-queues*",
+      "Effect": "Allow",
+      "Sid": "PermissionsNeededForPolicyManagement"
+    },
+    {
+      "Action": [
+        "iam:GetRole",
+        "iam:CreateRole",
+        "iam:GetRolePolicy",
+        "iam:AttachRolePolicy",
+        "iam:DeleteRolePolicy",
+        "iam:DeleteRole",
+        "iam:DetachRolePolicy",
+        "iam:UntagRole",
+        "iam:PutRolePolicy",
+        "iam:TagRole",
+        "iam:ListRoleTags"
+      ],
+      "Resource": [
+        "arn:aws:iam::271371352105:role/fs-queues*",
+        "arn:aws:iam::271371352105:role/cdk-hsteof61gw*"
+      ],
+      "Effect": "Allow",
+      "Sid": "PermissionsNeededForRoleManagement"
+    },
+    {
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::271371352105:role/cdk-hsteof61gw*",
+      "Effect": "Allow",
+      "Sid": "PermissionsNeededForPassRole"
+    }
+  ]
+}

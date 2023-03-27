@@ -1,5 +1,5 @@
 {
-  "name": "bria-sms-cdk",
+  "name": "fs-queues-cdk",
   "version": "1.0.0",
   "bin": {
     "app": "bin/app.js"
@@ -12,10 +12,12 @@
   },
   "devDependencies": {
     "@types/node": "^10.17.27",
+    "@types/uuid": "^9.0.1",
     "aws-cdk": "^2.51.1",
     "aws-cdk-lib": "^2.51.1",
     "constructs": "^10.0.0",
     "ts-node": "^10.9.1",
-    "typescript": "~3.9.7"
+    "typescript": "~3.9.7",
+    "uuid": "^8.3.2"
   }
 }

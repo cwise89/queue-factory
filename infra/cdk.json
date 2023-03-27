@@ -1,5 +1,5 @@
 {
-  "app": "npx ts-node --prefer-ts-exts bin/app.ts",
+  "app": "npx ts-node --prefer-ts-exts src/index.ts",
   "context": {
     "@aws-cdk/core:bootstrapQualifier": "hsteof61gw",
     "appId": "fs-queues",
@@ -16,8 +16,8 @@
       "cloudWatchDimensionName": "FUNCTION_NAME"
     },
     "lambdaConfig": {
-      "lambdaRepoName": "bria/sms",
-      "lambdaImageTag": "75169fb202"
+      "timeout": 30,
+      "memorySize": 256
     },
     "datadogConfig": {
       "environment": "prod",

@@ -1,0 +1,226 @@
+{
+  "version": "31.0.0",
+  "artifacts": {
+    "fs-queues-extend-cfx-deploy-role-stack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "fs-queues-extend-cfx-deploy-role-stack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hsteof61gw/version"
+      }
+    },
+    "fs-queues-extend-cfx-deploy-role-stack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "fs-queues-extend-cfx-deploy-role-stack.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hsteof61gw-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hsteof61gw-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hsteof61gw-assets-${AWS::AccountId}-${AWS::Region}/5612598c8d6eafe1757adb8fc2c490720bd25f6f74d584764d8c2935fbbbf041.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hsteof61gw/version",
+        "additionalDependencies": [
+          "fs-queues-extend-cfx-deploy-role-stack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hsteof61gw-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hsteof61gw/version"
+        }
+      },
+      "dependencies": [
+        "fs-queues-extend-cfx-deploy-role-stack.assets"
+      ],
+      "metadata": {
+        "/fs-queues-extend-cfx-deploy-role-stack/fs-queues-extend-cfx-deploy-role-stack/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "fsqueuesextendcfxdeployrolestack37D963E5"
+          }
+        ],
+        "/fs-queues-extend-cfx-deploy-role-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/fs-queues-extend-cfx-deploy-role-stack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/fs-queues-extend-cfx-deploy-role-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/fs-queues-extend-cfx-deploy-role-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "fs-queues-extend-cfx-deploy-role-stack"
+    },
+    "fs-queues-bria-sms-image.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "fs-queues-bria-sms-image.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hsteof61gw/version"
+      }
+    },
+    "fs-queues-bria-sms-image": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "fs-queues-bria-sms-image.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hsteof61gw-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hsteof61gw-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hsteof61gw-assets-${AWS::AccountId}-${AWS::Region}/8d01483cd157f8df757d1628819e801bf43b6ce4d2d91d2d4e3ce2d8c6e51111.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hsteof61gw/version",
+        "additionalDependencies": [
+          "fs-queues-bria-sms-image.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hsteof61gw-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hsteof61gw/version"
+        }
+      },
+      "dependencies": [
+        "fs-queues-extend-cfx-deploy-role-stack",
+        "fs-queues-bria-sms-image.assets"
+      ],
+      "metadata": {
+        "/fs-queues-bria-sms-image/Dlq/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DlqD1FAA4AD"
+          }
+        ],
+        "/fs-queues-bria-sms-image/StandardQueue/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StandardQueueD43B45BD"
+          }
+        ],
+        "/fs-queues-bria-sms-image/StandardQueue/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StandardQueuePolicy21A6CBEE"
+          }
+        ],
+        "/fs-queues-bria-sms-image/fs-queuesbria-sms-imagequeuearn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "fsqueuesbriasmsimagequeuearn"
+          }
+        ],
+        "/fs-queues-bria-sms-image/Lambda/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaServiceRoleA8ED4D3B"
+          }
+        ],
+        "/fs-queues-bria-sms-image/Lambda/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaServiceRoleDefaultPolicyDAE46E21"
+          }
+        ],
+        "/fs-queues-bria-sms-image/Lambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaD247545B"
+          }
+        ],
+        "/fs-queues-bria-sms-image/Lambda/SqsEventSource:fsqueuesbriasmsimageStandardQueueC8AC8C18/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaSqsEventSourcefsqueuesbriasmsimageStandardQueueC8AC8C18A7091C50"
+          }
+        ],
+        "/fs-queues-bria-sms-image/Lambda/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaCurrentVersionDF706F6A22e8170647a2163dc9d02d21b9e64b66"
+          }
+        ],
+        "/fs-queues-bria-sms-image/BlueGreenAlias/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BlueGreenAliasBBFFF6DE"
+          }
+        ],
+        "/fs-queues-bria-sms-image/BlueGreenBGDeploy/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BlueGreenBGDeployServiceRole90E93675"
+          }
+        ],
+        "/fs-queues-bria-sms-image/BlueGreenBGDeploy/Application/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BlueGreenBGDeployApplication0B5AE2DC"
+          }
+        ],
+        "/fs-queues-bria-sms-image/BlueGreenBGDeploy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BlueGreenBGDeploy9B73B8C0"
+          }
+        ],
+        "/fs-queues-bria-sms-image/BlueGreenBlueGreenErrorAlarm/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BlueGreenBlueGreenErrorAlarmA4ABAF86"
+          }
+        ],
+        "/fs-queues-bria-sms-image/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/fs-queues-bria-sms-image/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/fs-queues-bria-sms-image/Service-principalMap": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServiceprincipalMap"
+          }
+        ],
+        "/fs-queues-bria-sms-image/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/fs-queues-bria-sms-image/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "fs-queues-bria-sms-image"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}

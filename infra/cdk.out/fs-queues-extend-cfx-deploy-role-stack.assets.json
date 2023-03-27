@@ -1,0 +1,19 @@
+{
+  "version": "31.0.0",
+  "files": {
+    "5612598c8d6eafe1757adb8fc2c490720bd25f6f74d584764d8c2935fbbbf041": {
+      "source": {
+        "path": "fs-queues-extend-cfx-deploy-role-stack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hsteof61gw-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "5612598c8d6eafe1757adb8fc2c490720bd25f6f74d584764d8c2935fbbbf041.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hsteof61gw-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

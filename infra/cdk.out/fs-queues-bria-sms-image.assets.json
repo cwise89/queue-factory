@@ -1,0 +1,19 @@
+{
+  "version": "31.0.0",
+  "files": {
+    "8d01483cd157f8df757d1628819e801bf43b6ce4d2d91d2d4e3ce2d8c6e51111": {
+      "source": {
+        "path": "fs-queues-bria-sms-image.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hsteof61gw-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "8d01483cd157f8df757d1628819e801bf43b6ce4d2d91d2d4e3ce2d8c6e51111.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hsteof61gw-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}
