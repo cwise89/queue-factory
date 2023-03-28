@@ -145,3 +145,5 @@ export const handler: SQSHandler = async (event, context) => {
     throw error;
   }
 };
+
+// foo

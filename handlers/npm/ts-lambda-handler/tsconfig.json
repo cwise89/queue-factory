@@ -20,9 +20,6 @@
     "inlineSources": true,
     "experimentalDecorators": true,
     "strictPropertyInitialization": false,
-    "types": [
-      "node",
-    ],
     "outDir": "./build",
     "resolveJsonModule": true
   }

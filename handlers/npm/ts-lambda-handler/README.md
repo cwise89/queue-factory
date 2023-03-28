@@ -1,4 +1,4 @@
-# ts-lambda-handler Image
+# bria-sms Image
 
 ## Description:
 

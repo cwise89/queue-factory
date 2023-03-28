@@ -14,7 +14,7 @@ RUN apk add --no-cache \
     && rm -rf /var/cache/apk/*
 
 # install npm tools globally
-RUN npm install -g aws-cdk-local aws-cdk nodemon
+RUN npm install -g aws-cdk-local aws-cdk nodemon ts-node typescript
 
 RUN echo 'function init() {\
     if [ "$1" = "npm" ]; then\
@@ -26,13 +26,20 @@ RUN echo 'function init() {\
     fi\
     }' >> ~/.bashrc
 
-RUN echo 'function prepare() {\
+RUN echo 'prepare() {\
+    echo "Installing dependencies for infra";\
     npm --prefix infra/ install;\
+    if [ "$#" -eq 0 ]; then\
     for dir in ./handlers/npm/*/; do\
+    echo "Installing dependencies for handlers/npm/$dir";\
     npm --prefix "$dir" install;\
-    done\
+    done;\
+    else\
+    for dir in "$@"; do\
+    echo "Installing dependencies for handlers/npm/$dir";\
+    npm --prefix "handlers/npm/$dir" install;\
+    done;\
+    fi\
     }' >> ~/.bashrc
 
 RUN echo 'alias bootstrap="sh scripts/bootstrap/bootstrap.sh"' >> ~/.bashrc
-
-ENV ts_init="cp ./samples/ts/ ./handlers/npm/ts-handler-lambda -r"

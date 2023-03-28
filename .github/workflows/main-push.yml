@@ -1,0 +1,19 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      # for any dir in handlers/npm/ with changes, run sh deploy-image.sh --handler-id --region $AWS_REGION
+      - name: Build and deploy
+        run: |
+          for dir in $(git diff --name-only HEAD~1 | grep handlers/npm/ | cut -d/ -f3 | uniq); do
+            sh deploy-image.sh --handler-id $dir --region $AWS_REGION
+          done
